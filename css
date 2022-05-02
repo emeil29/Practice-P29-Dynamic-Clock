@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400&family=Fredoka:wght@400;500;600&family=Grape+Nuts&family=Hurricane&family=Lato:wght@300&family=Palette+Mosaic&family=Quintessential&family=Roboto:ital,wght@1,300&family=Water+Brush&display=swap');
+*{
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: black;
+    --secondary-color: white;  
+}
+html {
+    transition: all 0.7s ease-in;
+}
+html.dark{
+    --primary-color: white;
+    --secondary-color: black;  
+}
+html.dark{
+    background-color: black;
+    color: var(--primary-color);
+}
+body{
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+.toggle{
+    cursor: pointer;
+    background-color: gray;
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 60px;
+    position: absolute;
+    top: 100px;
+}
+.toggle:focus{
+    outline: none;
+}
+.clock-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.needle {
+    background-color:var(--primary-color) ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    transform-origin:bottom center ;
+    transition: all 0.5s ease-in;
+}
+.needle.hour{
+    transform: translate(30%, -100%) rotate(0deg);
+   background-color: blue;   
+}
+.needle.minute{
+    transform: translate(-50%, -100%) rotate(30deg);
+   background-color: blue;
+ height: 100px;   
+}
+.needle.second{
+    transform: translate(-50%, -100%) rotate(50deg);
+   background-color: rgb(163, 19, 38);
+ height: 100px;   
+}
+.center-point{
+    background-color: black;
+    width: 12px;
+    height: 12px;
+    border-radius: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+}
+.center-point::after{
+    content: '';
+    background-color: rgb(23, 2, 2);
+    width: 7px;
+    height: 7px;
+    border-radius: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
+}
+.time{
+   font-size: 60px; 
+   justify-content: center;
+}
+.date{
+    color: rgb(153, 22, 22);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    justify-content: center;
+}
+.date .circle{
+    background-color: white;
+    color: rgb(41, 4, 4);
+    border-radius: 50px;
+    height: 10px;
+    height: 10px;
+    display: inline-flex;
+    align-items: center;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+    font-size: 14px;
+}
